@@ -27,6 +27,9 @@ public:
 	// Sets default values for this pawn's properties
 	AMyPawn();
 
+	UPROPERTY(EditAnywhere, BlueprintReadOnly, Category = "Follower")
+	class AFollowingActor* Follower = nullptr;
+
 protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;

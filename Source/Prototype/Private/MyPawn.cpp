@@ -6,6 +6,7 @@
 #include "Camera/CameraComponent.h"
 #include "Components/InputComponent.h"
 #include "MyMovementComponent.h"
+#include "FollowingActor.h"
 
 // Sets default values
 AMyPawn::AMyPawn()
@@ -43,6 +44,11 @@ AMyPawn::AMyPawn()
 void AMyPawn::BeginPlay()
 {
 	Super::BeginPlay();
+
+	if (Follower)
+	{
+		Follower->AttachToComponent(Mesh, FAttachmentTransformRules::KeepRelativeTransform);
+	}
 	
 }
 
